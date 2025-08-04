@@ -1,7 +1,7 @@
-document.getElementById('clickButton').addEventListener('click', () => {
-  const button = document.getElementById('clickButton');
-  const msg = document.getElementById('message');
+const button = document.getElementById('clickButton');
+const msg = document.getElementById('message');
 
+button.addEventListener('click', () => {
   button.style.display = 'none';
   msg.classList.remove('hidden');
 
@@ -12,4 +12,9 @@ document.getElementById('clickButton').addEventListener('click', () => {
     origin: { y: 0.6 },
     emojis: ['🎉','🎂','🎈','💝','🥳','🎊']
   });
+});
+
+msg.addEventListener('click', () => {
+  msg.classList.add('hidden');
+  button.style.display = 'inline-block';
 });
