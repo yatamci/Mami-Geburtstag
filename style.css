@@ -1,15 +1,53 @@
+/* 🎨 Farbverlauf-Hintergrund */
 body {
   font-family: sans-serif;
-  background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+  background: linear-gradient(-45deg, #ffb6c1, #ffe6e6, #e6f7ff, #f0e6ff);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
   height: 100vh;
   margin: 0;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ✨ Sternen-Funkeln */
+.stars::before,
+.stars::after {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: starsMove 100s linear infinite;
+  z-index: 0;
+  opacity: 0.2;
+}
+
+.stars::after {
+  background-size: 80px 80px;
+  animation-duration: 120s;
+  opacity: 0.1;
+}
+
+@keyframes starsMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+/* 🎁 Inhalt */
 .container {
   text-align: center;
+  z-index: 1;
+  position: relative;
 }
 
 button {
@@ -21,6 +59,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease;
 }
 
 #message {
@@ -36,12 +75,4 @@ button {
 @keyframes pop {
   0% { transform: scale(0.5); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
-}
-
-button {
-  transition: opacity 0.3s ease;
-}
-
-button[style*="display: none"] {
-  opacity: 0;
 }
