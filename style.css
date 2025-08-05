@@ -91,6 +91,7 @@ button {
   width: 100%;
   height: 30vh; /* oder wie hoch du das Bild zeigen möchtest */
   background: url('5E9CEFF8-9C76-43A0-B42C-6CADC09A2ECE.png') bottom center no-repeat;
+  background-position: top center;
   background-size: cover;
   z-index: 1;
   mask-image: linear-gradient(to top, black 95%, transparent 100%);
