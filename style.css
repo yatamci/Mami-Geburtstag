@@ -8,10 +8,8 @@ body {
   margin: 0;
   overflow: hidden;
   display: flex;
-flex-direction: column;
-justify-content: flex-start;
+justify-content: center;
 align-items: center;
-padding-top: 10vh; /* oder 5vh, je nach gewünschter Höhe */
 }
 
 @keyframes gradientFlow {
@@ -62,6 +60,7 @@ button {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: opacity 0.3s ease;
+  margin-bottom: 3em;
 }
 
 #message {
@@ -88,6 +87,6 @@ button {
   background: url('5E9CEFF8-9C76-43A0-B42C-6CADC09A2ECE.png') bottom center no-repeat;
   background-size: cover;
   z-index: 1;
-  mask-image: linear-gradient(to top, black 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, black 85%, transparent 100%);
+  mask-image: linear-gradient(to top, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
 }
