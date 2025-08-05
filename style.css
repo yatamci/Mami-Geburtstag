@@ -45,11 +45,9 @@ align-items: center;
 
 /* 🎁 Inhalt */
 .container {
-  position: absolute;
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
   text-align: center;
+  z-index: 1;
+  position: relative;
 }
 
 button {
