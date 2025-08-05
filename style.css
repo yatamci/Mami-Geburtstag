@@ -72,7 +72,7 @@ button {
 
 .birthday-text {
   margin-bottom: 4em; /* ⬅️ Abstand zum Button */
-  transform: translateY(-3vh); /* ⬅️ oder z. B. -5vh für weiter oben */
+  transform: translateY(-5vh); /* ⬅️ oder z. B. -5vh für weiter oben */
 }
 
 .hidden {
