@@ -8,8 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
     button.style.display = 'none';
     msg.classList.remove('hidden');
     bottomImage.classList.remove('hidden');
-    
-    audio.currentTime = 0;
+
     audio.play();
 
     confetti({
