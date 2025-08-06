@@ -4,13 +4,26 @@ window.addEventListener('DOMContentLoaded', () => {
   const bottomImage = document.getElementById('bottomImage');
   const audio = document.getElementById('birthday-audio');
 
+  // Preload audio
+  audio.load();
+
   button.addEventListener('click', () => {
     button.style.display = 'none';
     msg.classList.remove('hidden');
     bottomImage.classList.remove('hidden');
 
-    audio.play();
+    // Play audio with error handling
+    const playPromise = audio.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.error("Audio playback failed:", error);
+        // Fallback: Show button again if audio fails
+        button.style.display = 'inline-block';
+      });
+    }
 
+    // Confetti effect
     confetti({
       particleCount: 150,
       spread: 100,
@@ -18,12 +31,14 @@ window.addEventListener('DOMContentLoaded', () => {
       emojis: ['🎉','🎂','🎈','💝','🥳','🎊']
     });
   });
-});
 
-msg.addEventListener('click', () => {
-  msg.classList.add('hidden');
-  bottomImage.classList.add('hidden'); // 👈 Bild wird wieder ausgeblendet
-  button.style.display = 'inline-block';
-  audio.pause();
-  audio.currentTime = 0;
+  // Click message to reset
+  msg.addEventListener('click', (e) => {
+    e.stopPropagation();
+    msg.classList.add('hidden');
+    bottomImage.classList.add('hidden');
+    button.style.display = 'inline-block';
+    audio.pause();
+    audio.currentTime = 0;
+  });
 });
