@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const audio = document.getElementById('birthday-audio');
 
   // Preload audio
-  audio.volume = 0.5;
+  audio.volume = 0.2;
   audio.load();
 
   button.addEventListener('click', () => {
